@@ -3,8 +3,8 @@
 :root {
     --laranja: #e67e34;
     --branco: #fff;
-    --cinza: #999;
-    --cina-claro: #eee;
+    --cinza: #aaa;
+    --cinza-claro: #eee;
 }
 
 * {
@@ -31,10 +31,6 @@ button {
     background-color: transparent;
 }
 
-input {
-    border: none;
-}
-
 a {
     cursor: pointer;
     display: block;
@@ -53,6 +49,8 @@ a:hover {
     cursor: pointer;
 }
 
+
+
 .cabecalho {
     background-color: transparent;
     padding: 0px 60px;
@@ -64,12 +62,12 @@ a:hover {
 }
 
 .cabecalho span {
-    background-color: var(--laranja);
-    text-transform: uppercase;
-    align-self: flex-start;
-    color: var(--branco);
-    padding: 15px 5px;
     font-weight: bold;
+    padding: 20px 10px;
+    color: var(--branco);
+    align-self: flex-start;
+    text-transform: uppercase;
+    background-color: var(--laranja);
 }
 
 .cabecalho nav ul {
@@ -81,13 +79,14 @@ a:hover {
 .cabecalho nav ul li {
     font-size: 12px;
     margin-left: 100px;
-    transition: color 0.2s;
     text-transform: uppercase;
 }
 
 .cabecalho nav ul li:nth-child(2) {
     margin-left: 25px;
 }
+
+
 
 .principal {
     display: flex;
@@ -110,12 +109,9 @@ a:hover {
     justify-content: center;
     
     padding: 10px;
+    font-size: 16px;
     list-style: none;
     margin-bottom: 100px;
-}
-
-.lateral-opcoes li {
-    margin: 15px;
 }
 
 .lateral-opcoes li a {
@@ -131,9 +127,12 @@ a:hover {
     list-style: none;
 }
 
+.lateral-opcoes li,
 .lateral-midias li {
-    margin: 15px;
+    margin: 10px;
 }
+
+
 
 .conteudo {
     width: 100%;
@@ -147,16 +146,15 @@ a:hover {
     padding-left: 10px;
 }
 
-.anterior h1 {
-    letter-spacing: 4px;
+.anterior > h1 {
+    letter-spacing: 5px;
     padding-bottom: 5px;
     color: var(--laranja);
 }
 
 .proximo {
-    width: 130px;
+    width: 125px;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -196,46 +194,60 @@ a:hover {
 .quantidade {
     width: 100%;
     display: flex;
-    font-weight: bold;
     margin-bottom: 10px;
     justify-content: space-between;
-    background-color: var(--cina-claro);
+    background-color: var(--cinza-claro);
 }
 
 .quantidade > input {
     width: 50px;
+    border: none;
     font-weight: bold;
     text-align: center;
-    background-color: var(--cina-claro);
+    background-color: var(--cinza-claro);
 }
 
 .quantidade > button {
     font-weight: bold;
 }
 
+
+
+#anterior, 
 #proximo {
     width: 80px;
-    height: 60px;
-    padding: 10px 0px;
-    margin-bottom: 10px;
-    align-self: flex-end;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    position: relative;
     background-color: transparent;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#anterior {
-    width: 80px;
-    height: 60px;
-    padding: 10px 0px;
-    margin-left: -10px;
-    background-color: transparent;
+#proximo {
+    margin-bottom: 10px;
+    align-self: flex-end;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#anterior {
+    margin-left: -20px;
+    margin-top: 10px;
+}
+
+
+#anterior::before,
+#proximo::before {
+    content: '';
+    position: absolute;
+    z-index: -1000;
+    width: 60px;
+    height: 40px;
+    opacity: 0.6;
+    margin-left: 10px;
+    background-color: var(--cinza);
 }
 
 .setas {
@@ -243,6 +255,61 @@ a:hover {
     font-weight: 100;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: row;
+        padding: 0px 10px;
+        height: 80px;
+    }
+
+    .cabecalho > span {
+        padding: 10px 5px;
+    }
+
+    .cabecalho nav, .cabecalho nav ul {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .cabecalho nav ul li {
+        margin-left: 0px !important;
+    }
+
+    .principal {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0px;
+    }
+
+    .lateral {
+        flex-direction: row;
+        padding: 10px;
+    }
+    
+    .lateral-opcoes {
+        margin-bottom: 0px;
+        padding: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .lateral-midias {
+        justify-content: center;
+    }
+
+    .conteudo {
+        padding: 50px 10px 10px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .anterior {
+        align-self: flex-start;
+        padding-left: 20px;
+    }
+
+    .proximo {
+        align-self: flex-end;
+    }
 
 }
