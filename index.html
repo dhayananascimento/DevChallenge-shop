@@ -11,48 +11,48 @@
     <title>Shop</title>
 </head>
 <body>
-    <header>
+    <header class="cabecalho">
         <span>shop</span>
         <nav>
             <ul>
-                <li>My Account</li>
-                <li>Search</li>
-                <li><i class="fa fa-shopping-bag"></i></li>
-                <li><i class="fa fa-align-right"></i></li>
+                <li><a>My Account</a></li>
+                <li><a>Search</a></li>
+                <li><a><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a><i class="fa fa-align-right"></i></a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <div>
-            <ul>
-                <li>WOMEN</li>
-                <li>MEN</li>
-                <li>SHOES</li>
-                <li>BRAND</li>
+    <main class="principal">
+        <div class="lateral">
+            <ul class="lateral-opcoes">
+                <li><a href="#">WOMEN</a></li>
+                <li><a href="#">MEN</a></li>
+                <li><a href="#">SHOES</a></li>
+                <li class="active">BRAND</li>
             </ul>
-            <ul>
-                <li>icone</li>
-                <li>icone</li>
-                <li>icone</li>
+            <ul class="lateral-midias">
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             </ul>
         </div>
-        <div>
-            <div>
-                <h1>BRAND SWEATSHIRT</h1>
+        <div class="conteudo">
+            <div class="anterior">
+                <h1>BRAND<br>SWEATSHIRT</h1>
                 <h3>$1000</h3>
-                <div>PREV</div>
+                <div id="anterior"><i class="fa fa-arrow-left setas"></i>PREV</div>
             </div>
 
-            <div>
-                <div>NEXT</div>
-                <div>
+            <div class="proximo">
+                <div id="proximo">NEXT<i class="fa fa-arrow-right setas"></i></div>
+                <div class="tamanho">
                     <div>S</div>
                     <div>M</div>
                     <div>L</div>
                 </div>
-                <div>
+                <div class="quantidade">
                     <button>-</button>
-                    <input type="text">
+                    <input disabled type="text" value="1">
                     <button>+</button>
                 </div>
                 <button>ADD TO CART</button>

@@ -1,65 +1,248 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
 :root {
-    --orange: #e67e34;
-    --white: #fff;
+    --laranja: #e67e34;
+    --branco: #fff;
+    --cinza: #999;
+    --cina-claro: #eee;
 }
 
 * {
     margin: 0;
     padding: 0;
-    outline: border-box;
+    outline: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
 body {
+    height: 100vh;
+    width: 100%;
     background: url(./assets/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    height: 100vh;
-    width: 100%;
 }
 
-header {
+button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     background-color: transparent;
+}
+
+input {
+    border: none;
+}
+
+a {
+    cursor: pointer;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: var(--laranja);
+}
+
+.active {
+    color: var(--laranja);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cabecalho {
+    background-color: transparent;
+    padding: 0px 60px;
+    height: 80px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: auto;
-    padding: 0px 60px;
 }
 
-header span {
-    background-color: var(--orange);
+.cabecalho span {
+    background-color: var(--laranja);
     text-transform: uppercase;
     align-self: flex-start;
+    color: var(--branco);
     padding: 15px 5px;
-    color: var(--white);
     font-weight: bold;
 }
 
-header nav ul {
-    list-style: none;
+.cabecalho nav ul {
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
 }
 
-header nav ul li {
-    text-transform: uppercase;
+.cabecalho nav ul li {
+    font-size: 12px;
     margin-left: 100px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    margin-top: 20px;
     transition: color 0.2s;
+    text-transform: uppercase;
 }
 
-header nav ul li:nth-child(2) {
+.cabecalho nav ul li:nth-child(2) {
     margin-left: 25px;
 }
 
-header nav ul li:hover {
-    color: var(--orange);
+.principal {
+    display: flex;
+    justify-content: space-between;
+
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+    padding: 120px 20px 20px;
+    background-color: transparent;
+}
+
+.lateral {
+    padding-right: 60px;
+}
+
+.lateral-opcoes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 10px;
+    list-style: none;
+    margin-bottom: 100px;
+}
+
+.lateral-opcoes li {
+    margin: 15px;
+}
+
+.lateral-opcoes li a {
+    color: var(--cinza);
+}
+
+.lateral-opcoes li a:hover {
+    color: var(--laranja);
+}
+
+.lateral-midias {
+    display: flex;
+    list-style: none;
+}
+
+.lateral-midias li {
+    margin: 15px;
+}
+
+.conteudo {
+    width: 100%;
+    padding: 40px 60px 10px 100px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.anterior {
+    padding-left: 10px;
+}
+
+.anterior h1 {
+    letter-spacing: 4px;
+    padding-bottom: 5px;
+    color: var(--laranja);
+}
+
+.proximo {
+    width: 130px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.proximo > button {
+    width: 100%;
+    color: var(--branco);
+    transition: all 0.3s;
+    background-color: var(--laranja);
+}
+
+.proximo > button:hover {
+    opacity: 0.9;
+}
+
+.tamanho {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.tamanho > div {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid var(--cinza);
+}
+
+.tamanho > div:nth-child(2), .tamanho > div:hover{
+    border-color: var(--laranja);
+}
+
+.quantidade {
+    width: 100%;
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    background-color: var(--cina-claro);
+}
+
+.quantidade > input {
+    width: 50px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--cina-claro);
+}
+
+.quantidade > button {
+    font-weight: bold;
+}
+
+#proximo {
+    width: 80px;
+    height: 60px;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    align-self: flex-end;
+    background-color: transparent;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#anterior {
+    width: 80px;
+    height: 60px;
+    padding: 10px 0px;
+    margin-left: -10px;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setas {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+@media (max-width: 900px) {
+
 }
